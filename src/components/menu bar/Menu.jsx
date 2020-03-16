@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 import { links } from './menuConstants'
@@ -10,7 +10,7 @@ const Menu = () => {
       justify-content: space-between;
       flex-direction: column;
       height: 98vh;
-      width: 180px;
+      width:  180px;
       background-color: #252E50;
       color: white;
       position: absolute;
@@ -24,7 +24,7 @@ const Menu = () => {
   const Logo = styled.h1`
       text-transform: uppercase;
       font-size: 0.6rem;
-      padding: 0rem 0 2rem;
+      padding: 2rem 0 2rem;
       letter-spacing: 0.3rem;
   `
 
@@ -37,10 +37,14 @@ const Menu = () => {
   const List = styled.ul`
     padding:0;
     margin: none;
+
+    &:last-child{
+        margin-bottom: 20px;
+      }
 `
   const NavLink = styled.li`
       list-style: none;
-      padding: 8px;
+      padding: 8px 0;
       font-size: 0.75rem;
       border-radius: 5px;
 
@@ -52,16 +56,21 @@ const Menu = () => {
         background-color: #5268C2;
       }
   `
-  const Icon = styled.img``
+ const [isOpen, setMenu] = useState('true');
 
+ const toggleMenu = () => {
+   setMenu(isOpen !== isOpen)
+ }
 
   return (
     <div style={{
 
     }}>
-      <NavMenu>
+      <NavMenu >
         <div>
-          <Logo>Apollo</Logo>
+          <Logo>Apollo
+            <button onClick={toggleMenu}> + </button>
+          </Logo>
           <Title> Organizations</Title>
           <NavLink>Madison Haradine</NavLink>
         </div>
