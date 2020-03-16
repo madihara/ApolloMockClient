@@ -14,7 +14,6 @@ import { links } from './menuConstants'
 		width:  240px;
 		background-color: #252E50;
 		color: white;
-		position: fixed;
 		left: 0;
 		font-size: 0.9rem;
 		font-family: 'Open Sans', sans-serif;
