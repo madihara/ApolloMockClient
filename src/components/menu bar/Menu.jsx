@@ -1,71 +1,83 @@
 import React from 'react'
+import styled from 'styled-components'
 
-
-const links = [
-  {
-    id: 1,
-    title: 'Personal Settings'
-  },
-  {
-    id: 2,
-    title: 'Docs'
-  },
-  {
-    id: 1,
-    title: 'Contact Support'
-  },
-  {
-    id: 1,
-    title: 'Status Report'
-  },
-  {
-    id: 1,
-    title: 'Log Out'
-  },
-]
+import { links } from './menuConstants'
 
 const Menu = () => {
+
+  const NavMenu = styled.nav`
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 98vh;
+      width: 180px;
+      background-color: #252E50;
+      color: white;
+      position: absolute;
+      left: 0;
+      font-size: 0.9rem;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: lighter;
+      padding: 1.5rem 1.5rem 2rem;
+      line-height: 0.6rem;
+  `
+  const Logo = styled.h1`
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      padding: 0rem 0 2rem;
+      letter-spacing: 0.3rem;
+  `
+
+  const Title = styled.h4`
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    color: #848484;
+    letter-spacing: 1px;
+  `
+  const List = styled.ul`
+    padding:0;
+    margin: none;
+`
+  const NavLink = styled.li`
+      list-style: none;
+      padding: 8px;
+      font-size: 0.75rem;
+      border-radius: 5px;
+
+      &:hover{
+        background-color:#1B2240;
+      }
+
+      &:active{
+        background-color: #5268C2;
+      }
+  `
+  const Icon = styled.img``
+
 
   return (
     <div style={{
 
     }}>
-      <nav style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'column',
-        height: '98vh',
-        width: '300px',
-        backgroundColor: '#252E50',
-        color: 'white',
-        position: 'absolute',
-        left: '0',
-        fontSize: '0.8rem',
-        fontFamily: 'Open Sans, sans-serif',
-        fontWeight: 'lighter',
-        padding: '1rem'
-      }}>
+      <NavMenu>
         <div>
-          <h1>Apollo</h1>
-          <h4> Organizations</h4>
-          <h5>
-            Madison Haradine
-          </h5>
+          <Logo>Apollo</Logo>
+          <Title> Organizations</Title>
+          <NavLink>Madison Haradine</NavLink>
         </div>
         <div>
-          <h4 style={{ textTransform: 'uppercase' }}>Settings and Support</h4>
-          <ul> {links.map((link, index) => {
-            return (
-              <li key={index} style={{
-                listStyle: 'none'
-              }}
-              >
-                <h5>{link.title}</h5>
-              </li>
-            )
-          })}</ul>
+          <Title>Settings and Support</Title>
+          <List>
+            {links.map((link, index) => {
+              return (
+                <NavLink key={index}>
+                  {link.title}
+                </NavLink>
+              )
+            })}
+          </List>
         </div>
-      </nav>
+      </NavMenu>
     </div >
   )
 }
