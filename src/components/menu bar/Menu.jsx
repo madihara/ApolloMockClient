@@ -1,36 +1,72 @@
 import React from 'react'
 
 
+const links = [
+  {
+    id: 1,
+    title: 'Personal Settings'
+  },
+  {
+    id: 2,
+    title: 'Docs'
+  },
+  {
+    id: 1,
+    title: 'Contact Support'
+  },
+  {
+    id: 1,
+    title: 'Status Report'
+  },
+  {
+    id: 1,
+    title: 'Log Out'
+  },
+]
+
 const Menu = () => {
+
   return (
-    <div>
+    <div style={{
+
+    }}>
       <nav style={{
         display: 'flex',
-        justifyContent: 'space between',
+        justifyContent: 'space-between',
         flexDirection: 'column',
-        height: '100vh',
+        height: '98vh',
+        width: '300px',
+        backgroundColor: '#252E50',
+        color: 'white',
         position: 'absolute',
-        left: '0'
+        left: '0',
+        fontSize: '0.8rem',
+        fontFamily: 'Open Sans, sans-serif',
+        fontWeight: 'lighter',
+        padding: '1rem'
       }}>
-        <span>
+        <div>
           <h1>Apollo</h1>
           <h4> Organizations</h4>
           <h5>
             Madison Haradine
           </h5>
-        </span>
-        <h4>Setting and Support</h4>
-        <h5>Personal Settings</h5>
-        <h5>Docs</h5>
-        <h5> Contact Support</h5>
-        <h5>Status Report</h5>
-        <h5>Log Out</h5>
-        <span>
-
-        </span>
+        </div>
+        <div>
+          <h4 style={{ textTransform: 'uppercase' }}>Settings and Support</h4>
+          <ul> {links.map((link, index) => {
+            return (
+              <li key={index} style={{
+                listStyle: 'none'
+              }}
+              >
+                <h5>{link.title}</h5>
+              </li>
+            )
+          })}</ul>
+        </div>
       </nav>
-
-    </div>
+    </div >
   )
 }
 
