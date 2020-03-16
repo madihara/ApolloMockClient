@@ -11,7 +11,7 @@ import { links } from './menuConstants'
 		justify-content: space-between;
 		flex-direction: column;
 		height: 100vh;
-		width:  240px;
+		min-width:  240px;
 		background-color: #252E50;
 		color: white;
 		left: 0;
@@ -20,51 +20,62 @@ import { links } from './menuConstants'
 		font-weight: lighter;
 		margin: 0;
 		line-height: 0.6rem; 
-	`
-		
-	const Logo = styled.h1`
-		text-transform: uppercase;
-		font-size: 0.6rem;
-		padding: 1rem 2rem 1.5rem;
-		letter-spacing: 0.3rem;
+			
+		h1{
+			text-transform: uppercase;
+			font-size: 0.6rem;
+			padding: 1rem 2rem 1.5rem 1.5rem;
+			letter-spacing: 0.3rem;
 
-		&:hover{
-			cursor: pointer
+			&:hover{
+				cursor: pointer
+			}
 		}
-		`
 
-	const Title = styled.h4`
-		text-transform: uppercase;
-		font-size: 0.6rem;
-		color: #848484;
-		letter-spacing: 1px;
-		padding: 0 1.5rem;
-		`
-	const List = styled.ul`
+		p{
+			height: 12px;
+			width: 12px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -5px 0 0 -5.5px;
+		}
+
+		h4{
+			text-transform: uppercase;
+			font-size: 0.6rem;
+			color: #848484;
+			letter-spacing: 1px;
+			padding: 0 1.5rem;
+		}
+		
+	ul{
 		padding:0;
 		margin: none;
 
 		&:last-child{
 				margin-bottom: 20px;
 			}
-`
-
-	const NavLink = styled.li`
-		list-style: none;
-		position: relative;
-		padding: 5px 0 5px 1rem;
-		font-size: 0.75rem;
-		border-radius: 5px;
-		margin: 0 8px;
-		height: 16px;
-
-		&:hover{
-			background-color:#1B2240;
-			cursor: pointer;
 		}
 
-		&:active{
-			background-color: #5268C2;
+
+		li{
+			list-style: none;
+			position: relative;
+			padding: 5px 0 5px 1rem;
+			font-size: 0.75rem;
+			border-radius: 5px;
+			margin: 0 8px;
+			height: 16px;
+
+			&:hover{
+				background-color:#1B2240;
+				cursor: pointer;
+			}
+
+			&:active{
+				background-color: #5268C2;
+			}
 		}
 	`
 
@@ -81,11 +92,11 @@ const Menu = () => {
  return (
 			<NavMenu>
 				<div>
-					<Logo>Apollo
+					<h1>Apollo
 						<button onClick={toggleMenu}> + </button>
-					</Logo>
-					<Title> Organizations</Title>
-					<NavLink>
+					</h1>
+					<h4> Organizations</h4>
+					<li>
 						<div style={{
 						height: '16px',
 						width: '16px',
@@ -97,33 +108,22 @@ const Menu = () => {
 						borderRadius: '5px',
 						fontWeight: 'bold'
 					}}>
-						<p style={{
-								height: '12px',
-								width:'12px',
-								position: 'absolute',
-								top: '50%',
-								left: '50%',
-								margin: '-5px 0 0 -5.5px',
-						}}>M</p>
+						<p>M</p>
 						</div >
 						<span>Madison Haradine</span>
-					
-					</NavLink>
+					</li>
 				</div>
 				<div>
-					
-					<Title>Settings and Support</Title>
-					<List>
+					<h4>Settings and Support</h4>
+					<ul>
 						{links.map((link, index) => {
 							return (
-								<NavLink href={link.url} key={index}>
-									
+								<li href={link.url} key={index}>
 									{link.title}
-								</NavLink>
-					
+								</li>
 							)
 						})}
-					</List>
+					</ul>
 				</div>
 			</NavMenu>
 	)

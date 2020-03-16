@@ -8,8 +8,10 @@ import './App.css'
 const App = () => {
   return (
     <main style={{display: 'flex', flexDirection: 'row', background:'#F5F6F8'}}>
+     
       <Menu />
       <UserPage />
+   
     </main>
   )
 }
