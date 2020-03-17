@@ -16,10 +16,13 @@ import { links } from './menuConstants'
 		color: white;
 		left: 0;
 		font-size: 0.9rem;
-		font-family: 'Open Sans', sans-serif;
 		font-weight: lighter;
 		margin: 0;
 		line-height: 0.6rem; 
+
+		@media screen and (max-width: 800px){
+			display: none;
+		}
 			
 		h1{
 			text-transform: uppercase;

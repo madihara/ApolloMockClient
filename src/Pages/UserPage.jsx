@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
-
 
 import HorizontalMenu from '../components/menu bar/HorizontalMenu'
 import ResponsiveDiv from '../components/containers/ResponsiveDiv'
@@ -15,7 +13,7 @@ const UserPage= () => {
       width: '100%',
       }}>
       <HorizontalMenu />
-      <ResponsiveDiv />
+      <ResponsiveDiv style={{overflowY: 'scroll'}} />
     </div>
   )
 }
