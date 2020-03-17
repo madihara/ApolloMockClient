@@ -21,7 +21,8 @@ import { links } from './menuConstants'
 		line-height: 0.6rem; 
 
 		@media screen and (max-width: 800px){
-			display: none;
+			width: 50px;
+			min-width: 0;
 		}
 			
 		h1{

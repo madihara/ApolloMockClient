@@ -12,7 +12,7 @@ const Title = styled.h3`
 
 const Responsive = styled.div`
   max-width: 100vw;
-  min-height: 100px;
+  min-height: 80px;
   background: white;
   color: black;
   border: 1px solid #DEE2E8;
@@ -26,10 +26,12 @@ const Responsive = styled.div`
 
   h4{
     font-weight: normal;
-    line-height: 0.5rem;
+    line-height: 0;
+    margin-bottom: 10px;
   }
   h5{
     font-weight: lighter;
+    line-height: 0;
   }
 `
 
@@ -37,14 +39,14 @@ const Responsive = styled.div`
 
  const ResponsiveDiv = () => {
   return(
-    <div style={{overflowY:'auto'}}>
+    <div>
       <Title>Not Congifured</Title>
       <Responsive>      
-        <div>
+        <div style={{display: 'flex', flexDirection:'column', justifyConent: 'center'}}>
         <h4>ohshutes</h4> 
         <h5>Unconfigured</h5>
         </div>
-        <Button style={{backgroundColor: 'green'}}>Finish Setup</Button>
+        <Button theme='secondary'>Finish Setup</Button>
       </Responsive>
     </div>
   
